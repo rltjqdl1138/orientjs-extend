@@ -1,0 +1,42 @@
+{
+  "name": "orientjs-extend",
+  "version": "0.0.2",
+  "description": "ORM package for orientDB",
+  "main": "dist/index.js",
+  "directories": {
+    "example": "example",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel -d dist lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rltjqdl1138/orientjs-extend.git"
+  },
+  "author": {
+    "name": "Kim kiseop",
+    "email": "rltjqdl1138@gmail.com"
+  },
+  "license": "ISC",
+  "keywords": [
+    "node",
+    "orientdb"
+  ],
+  "bugs": {
+    "url": "https://github.com/rltjqdl1138/orientjs-extend/issues"
+  },
+  "homepage": "https://github.com/rltjqdl1138/orientjs-extend#readme",
+  "dependencies": {
+    "orientjs": "^3.0.11"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.7",
+    "@babel/node": "^7.16.8",
+    "@babel/plugin-proposal-optional-chaining": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11"
+  }
+}
