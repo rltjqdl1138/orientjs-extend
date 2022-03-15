@@ -1,6 +1,6 @@
 {
   "name": "orientjs-extend",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "ORM package for orientDB",
   "main": "dist/index.js",
   "directories": {
@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/rltjqdl1138/orientjs-extend#readme",
   "dependencies": {
+    "@babel/runtime": "^7.17.7",
     "orientjs": "^3.0.11"
   },
   "devDependencies": {
