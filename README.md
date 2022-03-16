@@ -5,13 +5,13 @@ ORM for orientdb node.js
 
 # Installing
 Using npm:
-```
+``` bash
 npm install orientjs-extend
 ```
 
 # Initialize
 
-```
+``` js
 const orientdb = require('orientjs-extend')
 const db = new orientdb.db()
 
@@ -29,7 +29,7 @@ db.init({
 
 #### main.js
 
-```
+``` js
 const orientdb = require('orientjs-extend')
 const db = new orientdb.db()
 
@@ -55,7 +55,7 @@ There are predefined properties
 
 #### js file
 
-```
+``` js
 // models/animal.js
 const extend = 'V'
 const name = 'animal'
@@ -75,7 +75,7 @@ module.exports={
 
 #### json file
 
-```
+``` js
 {
   "extend":"V",
   "name":"animal",
@@ -92,7 +92,7 @@ module.exports={
 # Example
 
 #### create item
-```
+``` js
 async function run(){
   const args = { name: 'dog' }
   await db.RegisterItem('animal', args)
@@ -103,7 +103,7 @@ run()
 
 #### find one by id
 
-```
+``` js
 async function run(){
   const id = 1
   const attrs1 = null // null means SELECT all
@@ -134,7 +134,7 @@ run()
 
 #### list items
 
-```
+``` js
 async function run(){
   const model = {
     id: 'animal',
@@ -150,52 +150,40 @@ async function run(){
   const {items, pagination} = await db.getList(model, option)
   
   console.log(items)
+  console.log(pagination)
   /*
   [
     {
-      '@rid': RecordID { cluster: 20, position: 11 },
-      name: 'elephant',
-      id: 23
+      '@rid': RecordID { cluster: 20, position: 6 },
+      name: 'horse',
+      id: 13
     },
-    {
-      '@rid': RecordID { cluster: 21, position: 10 },
-      name: 'lion',
-      id: 22
-    },
-    {
-      '@rid': RecordID { cluster: 20, position: 10 },
-      name: 'frog',
-      id: 21
-    },
-    {
-      '@rid': RecordID { cluster: 21, position: 9 },
-      name: 'fox',
-      id: 20
-    },
-    {
-      '@rid': RecordID { cluster: 20, position: 9 },
-      name: 'wolf',
-      id: 19
-    }
+    ...
   ]
-  */
-  
-  console.log(pagination)
-  /*
-  {
-    firstPage: 0,
-    prevPage: null,
-    currentPage: 0,
-    nextPage: 1,
-    lastPage: 4,
-    limit: 5,
-    total: 23,
-    sort: 'created_at',
-    order: 'desc'
-  }
   */
 }
 
 run()
 ```
 
+
+#### response schema
+
+``` js
+{
+  items:[
+    ...
+  ],
+  pagination: {
+    firstPage: 0,   // first page. 
+    prevPage: 1,    // previous page. if it is null, this response is first page
+    currentPage: 2, // current page. it is equal to "page" in option
+    nextPage: 3,    // next page. if it is null, this response is last page or over it
+    lastPage: 4,    // last page.
+    limit: 5,       // it is equal to "limit" in option
+    total: 23,      // total records in database
+    sort: 'created_at', // sort option
+    order: 'desc'       // order option
+  }
+}
+```
