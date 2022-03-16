@@ -1,6 +1,6 @@
 {
   "name": "orientjs-extend",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "ORM package for orientDB",
   "main": "dist/index.js",
   "directories": {
@@ -8,7 +8,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --ignore './logs/' --exec npx babel-node example/index.js",
     "build": "babel -d dist lib"
   },
   "repository": {
