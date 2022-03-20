@@ -1,5 +1,6 @@
 # orientjs-extend
 ORM for orientdb node.js
+npm: https://www.npmjs.com/package/orientjs-extend
 
 # Features
 
