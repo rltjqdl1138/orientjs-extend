@@ -14,8 +14,8 @@ npm install orientjs-extend
 # Initialize
 
 ``` js
-const orientdb = require('orientjs-extend')
-const db = new orientdb.db()
+const orientdb = require('orientjs-extend').default
+const db = new orientdb()
 
 db.init({
   host: "127.0.0.1",
@@ -32,8 +32,8 @@ db.init({
 #### main.js
 
 ``` js
-const orientdb = require('orientjs-extend')
-const db = new orientdb.db()
+const orientdb = require('orientjs-extend').default
+const db = new orientdb()
 
 db.init({
   host: "127.0.0.1",
