@@ -55,25 +55,6 @@ There are predefined properties
 - created_at: (DATETIME) timestamp when data is created
 - updated_at: (DATETIME) timestamp when data is updated
 
-#### js file
-
-``` js
-// models/animal.js
-const extend = 'V'
-const name = 'animal'
-const attributes = {
-  id: { type:'LONG', required:true },
-  name:{type:'STRING', required: true},
-  created_at:{ type:'DATETIME', required:true },
-  updated_at:{ type:'DATETIME', required:true },
-}
-
-module.exports={
-    name, 
-    attributes,
-    extend
-}
-```
 
 #### json file
 
