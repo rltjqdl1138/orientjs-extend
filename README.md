@@ -83,7 +83,6 @@ async function run(){
 run()
 ```
 
-
 #### find one by id
 
 ``` js
@@ -109,6 +108,43 @@ async function run(){
   {
     id: 1,
     name: 'dog'
+  }
+  */
+}
+run()
+```
+
+
+#### update item
+``` js
+async function run(){
+  // Get item that have id 1
+  const oldItem = await db.GetItem('animal', null, 1);
+  /*
+  {
+    '@class': 'animal',
+    id: 1,
+    name: 'dog',
+    created_at: 2022-03-16T07:11:28.042Z,
+    updated_at: 2022-03-16T07:11:28.042Z,
+    '@rid': RecordID { cluster: 20, position: 0 },
+    '@version': 1
+  }
+  */
+  
+  const args = { name: 'bulldog' };
+  await db.UpdateItem('animal', args, oldItem.id);
+  
+  const newItem = await db.GetItem('animal', null, 1);
+  /*
+  {
+    '@class': 'animal',
+    id: 1,
+    name: 'bulldog',
+    created_at: 2022-03-16T07:11:28.042Z,
+    updated_at: 2022-04-12T21:08:36.946Z,
+    '@rid': RecordID { cluster: 20, position: 0 },
+    '@version': 1
   }
   */
 }
@@ -141,6 +177,7 @@ async function run(){
       name: 'horse',
       id: 13
     },
+    
     ...
   ]
   */
