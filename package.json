@@ -1,6 +1,6 @@
 {
   "name": "orientjs-extend",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "ORM package for orientDB",
   "main": "dist/index.js",
   "directories": {
