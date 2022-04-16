@@ -151,6 +151,36 @@ async function run(){
 run()
 ```
 
+
+#### delete item
+``` js
+async function run(){
+  // Get item that have id 1
+  const item = await db.GetItem('animal', null, 1);
+  /*
+  {
+    '@class': 'animal',
+    id: 1,
+    name: 'dog',
+    created_at: 2022-03-16T07:11:28.042Z,
+    updated_at: 2022-04-12T21:08:36.946Z,
+    '@rid': RecordID { cluster: 20, position: 0 },
+    '@version': 1
+  }
+  */
+  
+  const args = { name: 'bulldog' };
+  await db.DeleteItem('animal', item.id);
+  
+  const newItem = await db.GetItem('animal', null, 1);
+  /*
+  undefined
+  */
+}
+run()
+```
+
+
 #### list items
 
 ``` js
