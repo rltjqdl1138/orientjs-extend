@@ -1,16 +1,7 @@
-const orientdb = require('../lib/index')
-
-const db = new orientdb.db()
+const orientdb = require('../dist/index').default
+const db = new orientdb()
 
 async function run(){
-
-  await db.init({
-    "user": "",
-    "database": "",
-    "host": "",
-    "password": "",
-  })
-  
 }
 
 run()
